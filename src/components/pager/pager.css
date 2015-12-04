@@ -1,0 +1,57 @@
+.pager-container {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.pager-container button, input {
+    border-radius: 5px;
+    border: 1px solid #DDDDDD;
+    background-color: #FFFFFF;
+    padding: 7px;
+    font-size: .9rem;
+  }
+  
+  .pager-container > compose {
+    flex: 1 0;
+    margin: 2px;
+  }
+  
+  .pager-container button {
+    width: 100%;
+    min-width: 20px;
+    color: #428BCA;
+  }
+  
+  .pager-container button:hover {
+      cursor: pointer;
+      -moz-box-shadow:    3px 5px 6px #CCCCCC;
+      -webkit-box-shadow: 3px 5px 6px #CCCCCC;
+      box-shadow:         3px 5px 6px #CCCCCC;
+    }
+    
+    .pager-container button[disabled] {
+      cursor: default;
+      color: #777777;
+      box-shadow: 0 0;
+    }
+    
+    .pager-container input {
+    flex: 2 1;
+    margin: 2px;
+    }
+    .pager-container input:hover,:focus {
+      -moz-box-shadow:    3px 5px 6px #CCCCCC;
+      -webkit-box-shadow: 3px 5px 6px #CCCCCC;
+      box-shadow:         3px 5px 6px #CCCCCC;
+    }
+    .pager-container input.invalid {
+      border-color: #FF0000;
+    }
+      .pager-container input.invalid:hover,:focus {
+              -moz-box-shadow:    3px 5px 6px #FFA9A9;
+      -webkit-box-shadow: 3px 5px 6px #FFA9A9;
+      box-shadow:         3px 5px 6px #FFA9A9;
+      }

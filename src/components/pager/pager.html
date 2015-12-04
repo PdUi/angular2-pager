@@ -1,0 +1,32 @@
+<div class="pager-container">
+  <span *ng-if="enableFirstLastPageArrows" (click)="pageToBeginning()">
+      <button type="button" [disabled]="!canPageBackward">|<</button>
+  </span>
+  <span *ng-if="enablePageArrows" (click)="retreat()">
+      <button type="button" [disabled]="!canPageBackward"><</button>
+  </span>
+  <span *ng-if="hasMultiplePages" (click)="pageTo(firstPage)">
+      <button type="button" [disabled]="!canPageBackward">{{firstPage}}</button>
+  </span>
+  <span *ng-if="hasMorePagesBackward">
+      <button type="button" disabled>...</button>
+  </span>
+    <span *ng-for="#page of range" (click)="pageTo(page)">
+        <button type="button" [disabled]="isCurrentPage(page)">{{page}}</button>
+    </span>
+  <span *ng-if="hasMorePagesForward">
+      <button type="button" disabled>...</button>
+  </span>
+  <span *ng-if="hasMultiplePages" (click)="pageTo(totalPages)">
+      <button type="button" [disabled]="!canPageForward">{{totalPages}}</button>
+  </span>
+  <span *ng-if="enablePageArrows" (click)="advance()">
+      <button type="button" [disabled]="!canPageForward">></button>
+  </span>
+  <span *ng-if="enableFirstLastPageArrows" (click)="pageToEnd()">
+      <button type="button" [disabled]="!canPageForward">>|</button>
+  </span>
+  <span *ng-if="enablePageInput">
+    <input [(ng-model)]="pageInput" (blur)="updateCurrentPage()" [ng-class]="{ 'invalid' : !isValidPageInput }" />
+  </span>
+</div>
